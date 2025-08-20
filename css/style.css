@@ -56,6 +56,12 @@ audio{
   align-items:center;
   pointer-events:none;
 }
+/* Para páginas depois de "Coma" */
+.nav-left {
+  justify-content: flex-start; /* alinha à esquerda */
+  margin-left: 40px;           /* opcional: afasta da borda */
+  pointer-events: auto;
+}
 
 /* nav dentro do main (Born Again e demais faixas) */
 .nav-inline {
