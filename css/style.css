@@ -1,51 +1,86 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+:root{
+  --green:#27ff00;
+  --bg:none;
+  --pad:6vh;
+  --font: "Orbitron", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:#cfcfcf;
+  background:#000;
+  font-family:var(--font);
+  overflow-x:hidden;
+  min-height:100svh;
 }
 
-/* Player menor e posicionado na parte inferior esquerda */
-.player-container {
-  position: absolute;
-  bottom: 40px;  /* distância do rodapé */
-  left: 25%;     /* um pouco deslocado para esquerda */
-  transform: translateX(-50%);
+/* Fundo da página (imagem enviada) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(transparent, rgba(0,0,0,.65) 60%),
+    var(--bg) center/cover no-repeat fixed;
+  z-index:-1;
 }
 
-audio {
-  width: 280px; /* reduz player */
+/* Botões */
+.nav{
+  position:fixed;
+  bottom:var(--pad);
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:16px;
+  z-index:3;
+}
+.nav.right{
+  left:auto; right:var(--pad); transform:none;
+}
+.btn{
+  appearance:none;
+  border:0;
+  padding:.65rem 1.1rem;
+  border-radius:.45rem;
+  font-weight:700;
+  text-transform:uppercase;
+  background:var(--green);
+  color:#000;
+  cursor:pointer;
+  box-shadow:0 0 0 2px #003700 inset, 0 6px 20px rgba(39,255,0,.1);
+  text-decoration:none;
+}
+.btn:focus-visible{outline:2px solid #fff; outline-offset:2px}
+
+/* Player – COMA (centro) */
+.player.center{
+  position:fixed;
+  left:50%;
+  bottom:13vh;
+  transform:translateX(-50%);
+  width:min(460px, 70vw);
+  z-index:2;
 }
 
-/* Botões padrão */
-.btn {
-  background: #00ff00;
-  color: black;
-  padding: 10px 20px;
-  margin: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-.btn:hover {
-  background: #00cc00;
+/* Player – faixas com letras (metade esquerda, quase rodapé) */
+.player.left{
+  position:fixed;
+  left:26vw;                 /* “centro” da página esquerda */
+  bottom:8vh;                /* quase rodapé */
+  transform:translateX(-50%);
+  width:min(380px, 48vw);    /* menor */
+  z-index:2;
 }
 
-/* Botões centralizados (para páginas com player) */
-.nav-buttons {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+/* Texto inicial (index) opcional */
+.center-wrap{
+  display:grid; place-items:center;
+  min-height:100svh; text-align:center;
+  padding:18vh 3vw 12vh;
 }
-
-/* Botões no canto direito (para páginas sem player) */
-.nav-buttons-right {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+.lead{opacity:.9; font-style:italic; line-height:1.7}
+.enter{
+  position:fixed; top:1rem; left:1rem; z-index:3;
 }
