@@ -45,17 +45,17 @@ audio{
 }
 
 /* ===== nav buttons ===== */
-.nav.nav-inline {
-  display: block;
-  text-align: center; /* centraliza embaixo do player */
-  margin-top: 10px; /* dá um espacinho */
+.nav{
+  position:fixed;
+  bottom:42px;
+  left:0;
+  right:0;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+  pointer-events:none;
 }
-
-nav.nav-inline .btn {
-  display: inline-block;
-  margin: 0 5px;
-}
-
 
 /* nav dentro do main (Born Again e demais faixas) */
 .nav-inline {
