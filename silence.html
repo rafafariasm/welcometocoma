@@ -1,15 +1,21 @@
 <!doctype html>
-<html lang="pt-BR" style="--bg:url('img/5-SILENCE.jpg')">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>5 — Silence</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5. Silence</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/app.js"></script>
 </head>
-<body>
-  <audio class="player left" preload="metadata" controls controlsList="nodownload noplaybackrate" playsinline>
-    <source src="audio/5-silence.mp3" type="audio/mpeg">
-  </audio>
+<body class="bg" style="background-image:url('img/5-SILENCE.jpg')">
+  <main class="page">
+    <div class="player player-left">
+      <audio controls controlslist="nodownload noplaybackrate noremoteplayback" preload="metadata">
+        <source src="audio/5-silence.mp3" type="audio/mpeg" />
+      </audio>
+      <span class="visually-hidden">Faixa 5 — Silence</span>
+    </div>
+  </main>
 
   <nav class="nav">
     <a class="btn" href="no-more-chains.html">Back</a>
