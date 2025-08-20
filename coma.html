@@ -1,18 +1,23 @@
 <!doctype html>
-<html lang="pt-BR" style="--bg:url('img/1-COMA.jpg')">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>1 — Coma</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1. Coma</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/app.js"></script>
 </head>
-<body>
-  <!-- Player central -->
-  <audio class="player center" preload="metadata" controls controlsList="nodownload noplaybackrate" playsinline>
-    <source src="audio/1-coma.mp3" type="audio/mpeg">
-  </audio>
+<body class="bg" style="background-image:url('img/1-COMA.jpg')">
+  <main class="page">
+    <div class="player">
+      <audio controls controlslist="nodownload noplaybackrate noremoteplayback" preload="metadata">
+        <source src="audio/1-coma.mp3" type="audio/mpeg" />
+        Seu navegador não suporta o player de áudio.
+      </audio>
+      <span class="visually-hidden">Faixa 1 — Coma</span>
+    </div>
+  </main>
 
-  <!-- Navegação (músicas = centro inferior) -->
   <nav class="nav">
     <a class="btn" href="index.html">Back</a>
     <a class="btn" href="born-again.html">Next</a>
