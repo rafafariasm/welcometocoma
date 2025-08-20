@@ -60,6 +60,7 @@ audio{
 .nav-left {
   justify-content: flex-start; /* alinha para a esquerda */
   margin-left: 250px;           /* ajuste manual — mude esse valor até ficar bom */
+  bottom:42px;
   pointer-events: auto;
 }
 
