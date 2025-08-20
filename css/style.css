@@ -47,7 +47,7 @@ audio{
 /* ===== nav buttons ===== */
 .nav{
   position:fixed;
-  bottom:42px;
+  bottom:50px;
   left:0;
   right:0;
   display:flex;
