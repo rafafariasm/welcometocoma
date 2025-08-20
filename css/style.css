@@ -41,7 +41,7 @@ body{
 /* nas páginas a partir de Born Again */
 .page-track .player{
   position:relative;
-  margin-top:20px; /* abaixo do título */
+  margin-top:12px; /* mais próximo do título */
   transform:none;
   left:auto;
   bottom:auto;
@@ -53,13 +53,14 @@ body{
   gap:18px;
   justify-content:center;
   align-items:center;
-  margin-top:24px; /* separação abaixo do player */
+  margin-top:18px; /* bem perto do player */
 }
 .page-coma .nav{
   position:fixed;
   bottom:42px;
   left:0; right:0;
 }
+
 .btn{
   appearance:none;
   border:1px solid var(--matrix);
