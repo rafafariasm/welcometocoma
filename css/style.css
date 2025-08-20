@@ -21,19 +21,21 @@ body{
   align-items:center;
   justify-content:center;
 }
-.bg{ /* aplica pela tag style do html: style="background-image:url(...)" */ }
-
+.bg{
+  /* aplica pela tag style do html: style="background-image:url(...)" */
+}
 .player{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom: 36vh;               /* COMA central */
+  bottom: 36vh; /* COMA central */
   width: 460px;
-  max-width: 50vw;
+  max-width: 82vw;
 }
-.player-left{                 /* use nas demais faixas */
+.player-left{
+  /* use nas demais faixas */
   left: 100px;
-  bottom: 80px;
+  bottom: 50px;
   transform:none;
 }
 audio{
@@ -46,7 +48,8 @@ audio{
 .nav{
   position:fixed;
   bottom:42px;
-  left:10; right:10;
+  left:0;
+  right:0;
   display:flex;
   gap:18px;
   justify-content:center;
@@ -66,8 +69,13 @@ audio{
   transition:.2s transform, .2s background, .2s color, .2s border-color;
   cursor:pointer;
 }
-.btn:hover{ transform:translateY(-1px); background:rgba(43,254,71,.08); }
-.btn:active{ transform:translateY(0) scale(.98); }
+.btn:hover{
+  transform:translateY(-1px);
+  background:rgba(43,254,71,.08);
+}
+.btn:active{
+  transform:translateY(0) scale(.98);
+}
 
 /* botão principal (ENTER / call-to-action) */
 .cta{
@@ -80,5 +88,6 @@ audio{
 .visually-hidden{
   position:absolute !important;
   height:1px;width:1px;overflow:hidden;
-  clip:rect(1px,1px,1px,1px); white-space:nowrap;
+  clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
 }
