@@ -32,8 +32,8 @@ body{
   max-width: 82vw;
 }
 .player-left{                 /* use nas demais faixas */
-  left: 200px;
-  bottom: 100px;
+  left: 100px;
+  bottom: 50px;
   transform:none;
 }
 audio{
