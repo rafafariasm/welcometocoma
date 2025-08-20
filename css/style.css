@@ -1,84 +1,29 @@
-/* ===== base ===== */
-:root{
-  --matrix:#2bfe47;
-  --bg:#0c0c0c;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  color:#cfcfcf;
-  background:var(--bg) no-repeat center/cover fixed;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  letter-spacing:.3px;
+/* ===== player ===== */
+.player {
+  position: relative;        /* agora relativo ao fluxo normal */
+  margin: 20px auto 10px;    /* centraliza e aproxima do título */
+  width: 280px;              /* reduz tamanho */
+  max-width: 70vw;
 }
 
-/* ===== layout helpers ===== */
-.page{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.bg{ /* aplica pela tag style do html: style="background-image:url(...)" */ }
-
-.player{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  bottom: 36vh;               /* COMA central */
-  width: 460px;
-  max-width: 82vw;
-}
-.player-left{                 /* use nas demais faixas */
-  left: 100px;
-  bottom: 50px;
-  transform:none;
-}
-audio{
-  width:100%;
-  outline:none;
+audio {
+  width: 100%;
+  outline: none;
   filter: drop-shadow(0 0 0 transparent);
 }
 
 /* ===== nav buttons ===== */
-.nav{
-  position:fixed;
-  bottom:42px;
-  left:0; right:0;
-  display:flex;
-  gap:18px;
-  justify-content:center;
-  align-items:center;
-  pointer-events:none;
-}
-.btn{
-  pointer-events:auto;
-  appearance:none;
-  border:1px solid var(--matrix);
-  color:var(--matrix);
-  background:transparent;
-  padding:10px 22px;
-  font-size:16px;
-  text-decoration:none;
-  border-radius:8px;
-  transition:.2s transform, .2s background, .2s color, .2s border-color;
-  cursor:pointer;
-}
-.btn:hover{ transform:translateY(-1px); background:rgba(43,254,71,.08); }
-.btn:active{ transform:translateY(0) scale(.98); }
-
-/* botão principal (ENTER / call-to-action) */
-.cta{
-  position:relative;
-  top: 8vh;
-  font-size:18px;
+.nav {
+  position: relative;        /* deixa de ser fixo na tela */
+  bottom: auto;
+  margin: 10px auto 0;       /* espaço em cima */
+  display: flex;
+  gap: 12px;
+  justify-content: center;   /* centraliza abaixo do player */
 }
 
-/* acessibilidade escondida visualmente */
-.visually-hidden{
-  position:absolute !important;
-  height:1px;width:1px;overflow:hidden;
-  clip:rect(1px,1px,1px,1px); white-space:nowrap;
+.btn {
+  padding: 6px 14px;         /* menorzinho */
+  font-size: 14px;
+  border-radius: 6px;
 }
