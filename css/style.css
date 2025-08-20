@@ -59,7 +59,7 @@ audio{
 /* Para páginas depois de "Coma" */
 .nav-left {
   justify-content: flex-start; /* alinha para a esquerda */
-  margin-left: 150px;           /* ajuste manual — mude esse valor até ficar bom */
+  margin-left: 200px;           /* ajuste manual — mude esse valor até ficar bom */
   pointer-events: auto;
 }
 
