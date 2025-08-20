@@ -30,7 +30,7 @@ body{
   transform:translateX(-50%);
   bottom: 40vh; /* COMA central */
   width: 450px;
-  max-width: 80vw;
+  max-width: 86vw;
 }
 .player-left{
   /* use nas demais faixas */
