@@ -29,11 +29,11 @@ body{
   transform:translateX(-50%);
   bottom: 36vh;               /* COMA central */
   width: 460px;
-  max-width: 82vw;
+  max-width: 50vw;
 }
 .player-left{                 /* use nas demais faixas */
   left: 100px;
-  bottom: 50px;
+  bottom: 80px;
   transform:none;
 }
 audio{
@@ -46,7 +46,7 @@ audio{
 .nav{
   position:fixed;
   bottom:42px;
-  left:0; right:0;
+  left:10; right:10;
   display:flex;
   gap:18px;
   justify-content:center;
