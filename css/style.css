@@ -28,9 +28,9 @@ body{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom: 36vh; /* COMA central */
-  width: 460px;
-  max-width: 82vw;
+  bottom: 50vh; /* COMA central */
+  width: 450px;
+  max-width: 72vw;
 }
 .player-left{
   /* use nas demais faixas */
