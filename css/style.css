@@ -56,6 +56,15 @@ audio{
   align-items:center;
   pointer-events:none;
 }
+
+/* nav dentro do main (Born Again e demais faixas) */
+.nav-inline {
+  position: relative;
+  bottom: auto;
+  margin-top: 20px; /* espaço entre player e botões */
+  pointer-events: auto; /* reativa o clique */
+}
+
 .btn{
   pointer-events:auto;
   appearance:none;
