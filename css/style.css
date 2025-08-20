@@ -18,50 +18,43 @@ body{
   position:relative;
   min-height:100vh;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  text-align:center;
 }
+.bg{ /* aplica pela tag style do html: style="background-image:url(...)" */ }
 
-/* ===== player ===== */
 .player{
-  width:460px;
-  max-width:82vw;
-}
-
-/* posição específica para a COMA */
-.page-coma .player{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom:36vh; /* player centralizado mais alto */
+  bottom: 36vh;               /* COMA central */
+  width: 460px;
+  max-width: 50vw;
 }
-
-/* nas páginas a partir de Born Again */
-.page-track .player{
-  position:relative;
-  margin-top:12px; /* mais próximo do título */
+.player-left{                 /* use nas demais faixas */
+  left: 100px;
+  bottom: 80px;
   transform:none;
-  left:auto;
-  bottom:auto;
+}
+audio{
+  width:100%;
+  outline:none;
+  filter: drop-shadow(0 0 0 transparent);
 }
 
 /* ===== nav buttons ===== */
 .nav{
+  position:fixed;
+  bottom:42px;
+  left:10; right:10;
   display:flex;
   gap:18px;
   justify-content:center;
   align-items:center;
-  margin-top:18px; /* bem perto do player */
+  pointer-events:none;
 }
-.page-coma .nav{
-  position:fixed;
-  bottom:42px;
-  left:0; right:0;
-}
-
 .btn{
+  pointer-events:auto;
   appearance:none;
   border:1px solid var(--matrix);
   color:var(--matrix);
@@ -76,10 +69,16 @@ body{
 .btn:hover{ transform:translateY(-1px); background:rgba(43,254,71,.08); }
 .btn:active{ transform:translateY(0) scale(.98); }
 
-/* acessibilidade escondida */
+/* botão principal (ENTER / call-to-action) */
+.cta{
+  position:relative;
+  top: 8vh;
+  font-size:18px;
+}
+
+/* acessibilidade escondida visualmente */
 .visually-hidden{
   position:absolute !important;
   height:1px;width:1px;overflow:hidden;
-  clip:rect(1px,1px,1px,1px);
-  white-space:nowrap;
+  clip:rect(1px,1px,1px,1px); white-space:nowrap;
 }
