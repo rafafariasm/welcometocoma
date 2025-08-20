@@ -1,84 +1,51 @@
-/* ===== base ===== */
-:root{
-  --matrix:#2bfe47;
-  --bg:#0c0c0c;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  color:#cfcfcf;
-  background:var(--bg) no-repeat center/cover fixed;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  letter-spacing:.3px;
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-/* ===== layout helpers ===== */
-.page{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.bg{ /* aplica pela tag style do html: style="background-image:url(...)" */ }
-
-.player{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  bottom: 36vh;               /* COMA central */
-  width: 460px;
-  max-width: 82vw;
-}
-.player-left{                 /* use nas demais faixas */
-  left: 260px;
-  bottom: 160px;
-  transform:none;
-}
-audio{
-  width:100%;
-  outline:none;
-  filter: drop-shadow(0 0 0 transparent);
+/* Player menor e posicionado na parte inferior esquerda */
+.player-container {
+  position: absolute;
+  bottom: 40px;  /* distância do rodapé */
+  left: 25%;     /* um pouco deslocado para esquerda */
+  transform: translateX(-50%);
 }
 
-/* ===== nav buttons ===== */
-.nav{
-  position:fixed;
-  bottom:42px;
-  left:0; right:0;
-  display:flex;
-  gap:18px;
-  justify-content:center;
-  align-items:center;
-  pointer-events:none;
-}
-.btn{
-  pointer-events:auto;
-  appearance:none;
-  border:1px solid var(--matrix);
-  color:var(--matrix);
-  background:transparent;
-  padding:10px 22px;
-  font-size:16px;
-  text-decoration:none;
-  border-radius:8px;
-  transition:.2s transform, .2s background, .2s color, .2s border-color;
-  cursor:pointer;
-}
-.btn:hover{ transform:translateY(-1px); background:rgba(43,254,71,.08); }
-.btn:active{ transform:translateY(0) scale(.98); }
-
-/* botão principal (ENTER / call-to-action) */
-.cta{
-  position:relative;
-  top: 8vh;
-  font-size:18px;
+audio {
+  width: 280px; /* reduz player */
 }
 
-/* acessibilidade escondida visualmente */
-.visually-hidden{
-  position:absolute !important;
-  height:1px;width:1px;overflow:hidden;
-  clip:rect(1px,1px,1px,1px); white-space:nowrap;
+/* Botões padrão */
+.btn {
+  background: #00ff00;
+  color: black;
+  padding: 10px 20px;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #00cc00;
+}
+
+/* Botões centralizados (para páginas com player) */
+.nav-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Botões no canto direito (para páginas sem player) */
+.nav-buttons-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
