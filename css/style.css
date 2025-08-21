@@ -107,3 +107,64 @@ audio{
   clip:rect(1px,1px,1px,1px);
   white-space:nowrap;
 }
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  /* Centralizar player e deixar menor */
+  .player {
+    width: 90%;
+    bottom: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .player-left {
+    position: relative;
+    left: 0;
+    bottom: auto;
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Botões em coluna e mais fáceis de clicar */
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    bottom: 30px;
+  }
+
+  .nav-left {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  /* Botões mais confortáveis */
+  .btn {
+    width: 80%;
+    max-width: 250px;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* Botão CTA (Enter) centralizado */
+  .cta {
+    top: 5vh;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajuste extra para celulares bem pequenos */
+  .player {
+    width: 95%;
+    bottom: 20vh;
+  }
+
+  .btn {
+    width: 90%;
+    font-size: 13px;
+    padding: 10px;
+  }
+}
