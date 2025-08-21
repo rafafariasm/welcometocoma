@@ -4,10 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3. The Voice That Betrays</title>
+  
+  <!-- CSS principal (desktop) -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- CSS mobile (vem depois pra sobrescrever no celular) -->
+  <link rel="stylesheet" href="css/mobile.css" />
+  
   <script defer src="js/app.js"></script>
 </head>
-<body class="bg" style="background-image:url('img/3-THE-VOICE.jpg')">
+
+<!-- classe "the-voice" usada no mobile.css -->
+<body class="the-voice" style="background-image:url('img/3-THE-VOICE.jpg')">
   <main class="page">
     <div class="player player-left">
       <audio controls controlslist="nodownload noplaybackrate noremoteplayback" preload="metadata">
