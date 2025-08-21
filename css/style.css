@@ -108,11 +108,4 @@ audio{
   white-space:nowrap;
 }
 
-/* Versão mobile: se a página definir --mobile-bg, usamos ela */
-@media (max-width: 768px) {
-  .bg{
-    background-image: var(--mobile-bg, inherit) !important;
-    background-size: cover;
-    background-position: center;
-  }
-}
+
