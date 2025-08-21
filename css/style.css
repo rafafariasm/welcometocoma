@@ -110,13 +110,13 @@ audio{
 
 /* Página COMA - imagens diferentes para desktop e celular */
 body.bg-coma {
-  background-image: url("../img/1-COMA.jpg"); /* padrão desktop */
+  background-image: url("../img/1-COMA.jpg"); /* Desktop */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Quando for celular (largura até 768px, pode ajustar se quiser) */
+/* Versão celular */
 @media (max-width: 768px) {
   body.bg-coma {
     background-image: url("../img/CELULAR/10-COMA-CELULAR-2.jpg");
