@@ -1,0 +1,82 @@
+/* mobile.css */
+
+/* Aplica apenas em telas de celular/tablet */
+@media screen and (max-width: 768px) {
+
+  body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Página inicial */
+  body.index {
+    background-image: url("../img/CELULAR/1BEMVINDOCELULAR1.jpg");
+  }
+
+  /* Página Coma */
+  body.coma {
+    background-image: url("../img/CELULAR/2COMACELULAR2.jpg");
+  }
+
+  /* Página Born Again */
+  body.born-again {
+    background-image: url("../img/CELULAR/3BORNAGAINCELULAR3.jpg");
+  }
+
+  /* Página The Voice That Betrays */
+  body.the-voice {
+    background-image: url("../img/CELULAR/4THEVOICECELULAR4.jpg");
+  }
+
+  /* Página No More Chains */
+  body.no-more-chains {
+    background-image: url("../img/CELULAR/5NOMORECHAINSCELULAR5.jpg");
+  }
+
+  /* Página Silence */
+  body.silence {
+    background-image: url("../img/CELULAR/6SILENCECELULAR6.jpg");
+  }
+
+  /* Página Release */
+  body.release {
+    background-image: url("../img/CELULAR/7RELEASECELULAR7.jpg");
+  }
+
+  /* Página Gallery */
+  body.gallery {
+    background-image: url("../img/CELULAR/8GALLERYCELULAR8.jpg");
+  }
+
+  /* Página Fundo de vídeo */
+  body.fundo-video {
+    background-image: url("../img/CELULAR/9FUNDOCECELULAR9.jpg");
+  }
+
+  /* Ajustes gerais de layout para mobile */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .lyrics {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+    width: 90%;
+  }
+
+  audio {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  button {
+    width: 120px;
+    margin: 10px;
+  }
+}
