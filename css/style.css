@@ -108,10 +108,3 @@ audio{
   white-space:nowrap;
 }
 
-@media (max-width: 768px) {
-  body.bg.page-coma {
-    background-image: url("img/CELULAR/10-COMA -CELULAR-2.jpg") !important;
-  }
-}
-
-
