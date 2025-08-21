@@ -107,4 +107,55 @@ audio{
   clip:rect(1px,1px,1px,1px);
   white-space:nowrap;
 }
+/* ======== Mobile: trocar BGs por versões da pasta img/CELULAR ======== */
+@media (max-width: 820px) {
+  /* index / 0-INICIO.jpg -> 9-BEM VINDO -CELULAR-1.jpg */
+  body.bg[style*="img/0-INICIO.jpg"] {
+    background-image: url("img/CELULAR/9-BEM VINDO -CELULAR-1.jpg") !important;
+  }
+
+  /* 1. Coma */
+  body.bg[style*="img/1-COMA.jpg"] {
+    background-image: url("img/CELULAR/10-COMA -CELULAR-2.jpg") !important;
+  }
+
+  /* 2. Born Again */
+  body.bg[style*="img/2-BORN-AGAIN.jpg"] {
+    background-image: url("img/CELULAR/11- BORN - AGAIN - CELULAR-3.jpg") !important;
+  }
+
+  /* 3. The Voice */
+  body.bg[style*="img/3-THE-VOICE.jpg"] {
+    background-image: url("img/CELULAR/12- THE -VOICE - CELULAR-4.jpg") !important;
+  }
+
+  /* 4. No More Chains */
+  body.bg[style*="img/4-NO-MORE-CHAINS.jpg"] {
+    background-image: url("img/CELULAR/13- NO-MORE - CELULAR-5.jpg") !important;
+  }
+
+  /* 5. Silence */
+  body.bg[style*="img/5-SILENCE.jpg"] {
+    background-image: url("img/CELULAR/14 - SILENCE -CELULAR-6.jpg") !important;
+  }
+
+  /* Release */
+  body.bg[style*="img/6-release.jpg"] {
+    background-image: url("img/CELULAR/15- RELEASE - CELULAR-7.jpg") !important;
+  }
+
+  /* Gallery */
+  body.bg[style*="img/7-GALERIA-FOTOS.jpg"] {
+    background-image: url("img/CELULAR/16- GALLERY - CELULAR-8.jpg") !important;
+  }
+
+  /* Vídeo */
+  body.bg[style*="img/8-FUNDO-VIDEO.jpg"] {
+    background-image: url("img/CELULAR/17- FUNDO VIDEO - CELULAR-9.jpg") !important;
+  }
+
+  /* pequenos ajustes de layout no mobile (opcionais) */
+  .player { left:50%; transform:translateX(-50%); bottom:18vh; width:92vw; max-width:560px; }
+  .nav { bottom:24px; gap:12px; }
+}
 
