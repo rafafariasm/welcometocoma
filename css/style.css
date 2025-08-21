@@ -108,46 +108,18 @@ audio{
   white-space:nowrap;
 }
 
-/* ================================
-   Versões para CELULAR
-   ================================ */
-@media (max-width: 768px) {
-  .page-inicio {
-    background-image: url("../img/CELULAR/9-BEM VINDO -CELULAR-1.jpg");
-  }
-
-  .page-coma {
-    background-image: url("../img/CELULAR/10-COMA -CELULAR-2.jpg");
-  }
-
-  .page-bornagain {
-    background-image: url("../img/CELULAR/11-BORN - AGAIN -CELULAR-3.jpg");
-  }
-
-  .page-thevoice {
-    background-image: url("../img/CELULAR/12-THE -VOICE -CELULAR-4.jpg");
-  }
-
-  .page-nomore {
-    background-image: url("../img/CELULAR/13-NO-MORE -CELULAR-5.jpg");
-  }
-
-  .page-silence {
-    background-image: url("../img/CELULAR/14-SILENCE -CELULAR-6.jpg");
-  }
-
-  .page-release {
-    background-image: url("../img/CELULAR/15-RELEASE -CELULAR-7.jpg");
-  }
-
-  .page-gallery {
-    background-image: url("../img/CELULAR/16-GALLERY -CELULAR-8.jpg");
-  }
-
-  .page-video {
-    background-image: url("../img/CELULAR/17-FUNDO VIDEO -CELULAR-9.jpg");
-  }
+/* Página COMA - imagens diferentes para desktop e celular */
+body.bg-coma {
+  background-image: url("../img/1-COMA.jpg"); /* padrão desktop */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-
+/* Quando for celular (largura até 768px, pode ajustar se quiser) */
+@media (max-width: 768px) {
+  body.bg-coma {
+    background-image: url("../img/CELULAR/10-COMA-CELULAR-2.jpg");
+  }
+}
 
