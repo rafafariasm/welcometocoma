@@ -108,63 +108,35 @@ audio{
   white-space:nowrap;
 }
 
-/* ===== Responsividade ===== */
+/* ===== Ajustes para telas menores (celulares) ===== */
 @media (max-width: 768px) {
-  /* Centralizar player e deixar menor */
+
+  body {
+    font-size: 14px; /* diminui o texto */
+    padding: 10px;
+  }
+
   .player {
-    width: 90%;
-    bottom: 25vh;
+    width: 90%;   /* player ocupa quase toda largura */
+    bottom: 20vh; /* sobe um pouco */
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .player-left {
-    position: relative;
-    left: 0;
-    bottom: auto;
-    transform: none;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  /* Botões em coluna e mais fáceis de clicar */
   .nav {
-    flex-direction: column;
-    gap: 12px;
-    bottom: 30px;
+    flex-direction: column; /* botões em coluna */
+    gap: 10px;
+    bottom: 20px;
   }
 
-  .nav-left {
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  /* Botões mais confortáveis */
   .btn {
-    width: 80%;
-    max-width: 250px;
+    width: 80%; /* botões maiores e centralizados */
     text-align: center;
     font-size: 14px;
-    padding: 12px;
   }
 
-  /* Botão CTA (Enter) centralizado */
   .cta {
-    top: 5vh;
     font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ajuste extra para celulares bem pequenos */
-  .player {
-    width: 95%;
-    bottom: 20vh;
-  }
-
-  .btn {
-    width: 90%;
-    font-size: 13px;
-    padding: 10px;
+    top: 5vh;
   }
 }
