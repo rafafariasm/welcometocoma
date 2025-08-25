@@ -28,11 +28,12 @@ body{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom: 40vh;
+  bottom: 40vh; /* COMA central */
   width: 450px;
   max-width: 86vw;
 }
 .player-left{
+  /* use nas demais faixas */
   left: 100px;
   bottom: 120px;
   transform:none;
@@ -55,16 +56,20 @@ audio{
   align-items:center;
   pointer-events:none;
 }
+/* Para páginas depois de "Coma" */
 .nav-left {
-  justify-content: flex-start;
-  margin-left: 250px;
+  justify-content: flex-start; /* alinha para a esquerda */
+  margin-left: 250px;           /* ajuste manual — mude esse valor até ficar bom */
   pointer-events: auto;
 }
+
+
+/* nav dentro do main (Born Again e demais faixas) */
 .nav-inline {
   position: relative;
   bottom: auto;
-  margin-top: 20px;
-  pointer-events: auto;
+  margin-top: 20px; /* espaço entre player e botões */
+  pointer-events: auto; /* reativa o clique */
 }
 
 .btn{
@@ -101,42 +106,4 @@ audio{
   height:1px;width:1px;overflow:hidden;
   clip:rect(1px,1px,1px,1px);
   white-space:nowrap;
-}
-
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 1024px) {
-  .nav-left {
-    margin-left: 50px;
-  }
-}
-
-@media (max-width: 768px) {
-  body[data-page="born-again"] {
-    background-image: url("../img/3BORNAGAINCELULAR3.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
-  .player {
-    width: 90%;
-    left: 50%;
-    bottom: 20vh;
-    transform: translateX(-50%);
-  }
-
-  .nav {
-    bottom: 20px;
-    justify-content: center;
-  }
-
-  .nav-left {
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  .btn {
-    width: 100px;
-    text-align: center;
-    font-size: 14px;
-  }
 }
