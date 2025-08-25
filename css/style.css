@@ -108,7 +108,7 @@ audio{
 }
 
 /* ===== media queries ===== */
-@media (max-width: 100%) {
+@media (max-width: 768px) {
   .player {
     bottom: 30vh;
   }
