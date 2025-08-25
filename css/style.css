@@ -122,3 +122,56 @@ audio{
 }
 
 }
+
+/* ===== mobile portrait: girar layout ===== */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  /* evita rolagem e usa o viewport real do aparelho */
+  html, body { 
+    height: 100vh; 
+    overflow: hidden; 
+  }
+  @supports (height: 100dvh) {
+    html, body { height: 100dvh; } /* iOS/Android mais novos */
+  }
+
+  /* gira a página inteira (player, textos e tudo) */
+  .page {
+    position: fixed;       /* ocupa o viewport */
+    inset: 0;
+    width: 100vh;          /* troca largura/altura */
+    height: 100vw;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    overflow: hidden;
+    -webkit-transform: rotate(90deg);
+    -webkit-transform-origin: left top;
+  }
+
+  /* a nav precisa deixar de ser fixed pra girar junto */
+  .nav {
+    position: absolute;    /* override do fixed */
+    left: 0;
+    right: 0;
+    bottom: 40px;          /* ajuste fino conforme precisar */
+  }
+
+  /* se usar .nav-left/.nav-inline continuam valendo */
+
+  /* reposiciona o player após a rotação */
+  .player {
+    bottom: 22vw;          /* ajuste fino conforme seu layout */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 86vw;           /* garante que caiba bem na tela */
+    max-width: none;
+  }
+
+  /* opcional: imagem de fundo vertical para mobile */
+  .bg {
+    background-size: cover;
+    background-position: center;
+    /* se quiser trocar a arte:
+       background-image: url("imagens/bg-vertical.jpg");
+    */
+  }
+}
