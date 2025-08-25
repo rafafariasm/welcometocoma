@@ -63,7 +63,6 @@ audio{
   pointer-events: auto;
 }
 
-
 /* nav dentro do main (Born Again e demais faixas) */
 .nav-inline {
   position: relative;
@@ -106,4 +105,26 @@ audio{
   height:1px;width:1px;overflow:hidden;
   clip:rect(1px,1px,1px,1px);
   white-space:nowrap;
+}
+
+/* ===== mobile: força rotação em portrait ===== */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  body {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;   /* altura vira largura */
+    height: 100vw;  /* largura vira altura */
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .player {
+    bottom: 20vw; /* reajuste pra manter player visível após rotação */
+  }
+
+  .nav {
+    bottom: 40px; /* reposiciona botões */
+  }
 }
