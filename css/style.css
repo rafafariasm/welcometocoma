@@ -28,14 +28,14 @@ body{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom: 40vh; /* posição central aproximada */
-  width: clamp(280px, 60vw, 450px); /* escala entre mobile e desktop */
-  max-width: 90vw;
+  bottom: 40vh; /* COMA central */
+  width: 450px;
+  max-width: 86vw;
 }
 .player-left{
   /* use nas demais faixas */
-  left: 5vw;
-  bottom: 15vh;
+  left: 100px;
+  bottom: 120px;
   transform:none;
 }
 audio{
@@ -47,11 +47,11 @@ audio{
 /* ===== nav buttons ===== */
 .nav{
   position:fixed;
-  bottom:5vh;
+  bottom:60px;
   left:0;
   right:0;
   display:flex;
-  gap:1rem;
+  gap:18px;
   justify-content:center;
   align-items:center;
   pointer-events:none;
@@ -59,15 +59,16 @@ audio{
 /* Para páginas depois de "Coma" */
 .nav-left {
   justify-content: flex-start; /* alinha para a esquerda */
-  margin-left: 5vw;            /* valor relativo, não fixo */
+  margin-left: 250px;           /* ajuste manual — mude esse valor até ficar bom */
   pointer-events: auto;
 }
+
 
 /* nav dentro do main (Born Again e demais faixas) */
 .nav-inline {
   position: relative;
   bottom: auto;
-  margin-top: 1.2rem; /* espaço entre player e botões */
+  margin-top: 20px; /* espaço entre player e botões */
   pointer-events: auto; /* reativa o clique */
 }
 
@@ -77,8 +78,8 @@ audio{
   border:1px solid var(--matrix);
   color:var(--matrix);
   background:transparent;
-  padding:.6rem 1.4rem;
-  font-size:clamp(14px, 2vw, 16px); /* escala entre mobile e desktop */
+  padding:10px 22px;
+  font-size:16px;
   text-decoration:none;
   border-radius:8px;
   transition:.2s transform, .2s background, .2s color, .2s border-color;
@@ -96,7 +97,7 @@ audio{
 .cta{
   position:relative;
   top: 8vh;
-  font-size:clamp(16px, 2.5vw, 18px);
+  font-size:18px;
 }
 
 /* acessibilidade escondida visualmente */
@@ -105,20 +106,4 @@ audio{
   height:1px;width:1px;overflow:hidden;
   clip:rect(1px,1px,1px,1px);
   white-space:nowrap;
-}
-
-/* ===== media queries ===== */
-@media (max-width: 768px) {
-  .player {
-    bottom: 30vh;
-  }
-  .player-left {
-    left: 2vw;
-    bottom: 12vh;
-  }
-  .nav-left {
-    margin-left: 2vw;
-  }
-}
-
 }
