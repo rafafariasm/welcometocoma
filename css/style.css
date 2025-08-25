@@ -121,17 +121,4 @@ audio{
   }
 }
 
-@media (max-width: 480px) {
-  .player {
-    bottom: 25vh;
-    width: 90vw;
-  }
-  .cta {
-    top: 5vh;
-    font-size: 16px;
-  }
-  .nav {
-    gap: .8rem;
-    bottom: 4vh;
-  }
 }
