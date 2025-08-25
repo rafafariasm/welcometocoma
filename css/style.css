@@ -135,3 +135,19 @@ audio{
     bottom: 4vh;
   }
 }
+
+/* fundo padrão (desktop) */
+.bg {
+  background-image: url("../img/1-COMA.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* quando a tela for até 768px (celulares/tablets) */
+@media (max-width: 768px) {
+  .bg {
+    background-image: url("../img/CELULAR/2COMACELULAR2.jpg");
+    background-attachment: scroll; /* evita bug no mobile com fixed */
+  }
+}
