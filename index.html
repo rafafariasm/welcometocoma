@@ -1,123 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMA - EP</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site 9 Seções — Matrix Style</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <div class="container">
-        <!-- Página 1 - Entrada -->
-        <section id="page1" class="page active">
-            <div class="content">
-                <button id="enterBtn" class="matrix-btn">ENTER</button>
-            </div>
-        </section>
+<body class="page1">
+  <!-- SPA WRAPPER -->
+  <main id="app">
 
-        <!-- Página 2 - Vídeo 1 -->
-        <section id="page2" class="page video-page">
-            <div class="content">
-                <div class="video-container">
-                    <div id="player1" class="youtube-player"></div>
-                </div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <!-- PÁGINA 1 -->
+    <section id="page1" class="section">
+      <div class="section-content"></div>
+      <div class="bottom-cta">
+        <button class="btn matrix" id="enterBtn">ENTER</button>
+      </div>
+    </section>
 
-        <!-- Página 3 - Vídeo 2 -->
-        <section id="page3" class="page video-page">
-            <div class="content">
-                <div class="video-container">
-                    <div id="player2" class="youtube-player"></div>
-                </div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <!-- PÁGINAS 2 ~ 6 (VÍDEOS) -->
+    <section id="page2" class="section">
+      <div class="section-content">
+        <div class="video-wrap">
+          <div class="yt-player" id="yt2" data-video-id="VIDEO_ID_2"></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-        <!-- Página 4 - Vídeo 3 -->
-        <section id="page4" class="page video-page">
-            <div class="content">
-                <div class="video-container">
-                    <div id="player3" class="youtube-player"></div>
-                </div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <section id="page3" class="section">
+      <div class="section-content">
+        <div class="video-wrap">
+          <div class="yt-player" id="yt3" data-video-id="VIDEO_ID_3"></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-        <!-- Página 5 - Vídeo 4 -->
-        <section id="page5" class="page video-page">
-            <div class="content">
-                <div class="video-container">
-                    <div id="player4" class="youtube-player"></div>
-                </div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <section id="page4" class="section">
+      <div class="section-content">
+        <div class="video-wrap">
+          <div class="yt-player" id="yt4" data-video-id="VIDEO_ID_4"></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-        <!-- Página 6 - Vídeo 5 -->
-        <section id="page6" class="page video-page">
-            <div class="content">
-                <div class="video-container">
-                    <div id="player5" class="youtube-player"></div>
-                </div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <section id="page5" class="section">
+      <div class="section-content">
+        <div class="video-wrap">
+          <div class="yt-player" id="yt5" data-video-id="VIDEO_ID_5"></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-        <!-- Página 7 - Release -->
-        <section id="page7" class="page">
-            <div class="content">
-                <div class="release-image"></div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <section id="page6" class="section">
+      <div class="section-content">
+        <div class="video-wrap">
+          <div class="yt-player" id="yt6" data-video-id="VIDEO_ID_6"></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-        <!-- Página 8 - Galeria -->
-        <section id="page8" class="page">
-            <div class="content">
-                <div class="gallery-image"></div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn next-btn">NEXT</button>
-                </div>
-            </div>
-        </section>
+    <!-- PÁGINA 7 -->
+    <section id="page7" class="section">
+      <div class="section-content"></div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-        <!-- Página 9 - Vídeo Final -->
-        <section id="page9" class="page video-page">
-            <div class="content">
-                <div class="video-container">
-                    <div id="player6" class="youtube-player"></div>
-                </div>
-                <div class="navigation">
-                    <button class="matrix-btn back-btn">BACK</button>
-                    <button class="matrix-btn home-btn">HOME</button>
-                </div>
-            </div>
-        </section>
-    </div>
+    <!-- PÁGINA 8 -->
+    <section id="page8" class="section">
+      <div class="section-content">
+        <img src="CELULAR/8-GALERIA FOTO CELULAR.png" alt="Galeria Celular" class="gallery-img">
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="next">NEXT</button>
+      </div>
+    </section>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="js/script.js"></script>
+    <!-- PÁGINA 9 -->
+    <section id="page9" class="section">
+      <div class="section-content">
+        <div class="video-wrap">
+          <div class="yt-player" id="yt9" data-video-id="VIDEO_ID_9"></div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn matrix" data-nav="back">BACK</button>
+        <button class="btn matrix" data-nav="home">HOME</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
