@@ -37,9 +37,7 @@ body.page8 {
   }
   /* Página 7 no celular */
   body.page7 {
-    /* Se o arquivo correto for "7-release celular.png", mantenha esta linha.
-       Caso o nome seja outro, ajuste aqui. */
-    background-image: url("CELULAR/7-release celular.png");
+    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
   }
   /* Página 8 no celular */
   body.page8 {
