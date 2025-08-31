@@ -4,26 +4,27 @@ let currentIndex = 0;
 
 function showPage(idx) {
   if (idx < 0 || idx >= sections.length) return;
+  
+  // Pausar vídeo da página atual antes de mudar
+  const currentSec = sections[currentIndex];
+  const currentPlayerDiv = currentSec.querySelector('.yt-player');
+  if (currentPlayerDiv) {
+    const currentPlayer = ytPlayers.get(currentPlayerDiv.id);
+    if (currentPlayer && typeof currentPlayer.pauseVideo === 'function') {
+      try {
+        currentPlayer.pauseVideo();
+      } catch (_) {}
+    }
+  }
+  
   sections.forEach((s, i) => s.classList.toggle('active', i === idx));
   currentIndex = idx;
 
   // Atualiza classe no body para aplicar fundos por página
   const body = document.body;
   body.className = `page${idx + 1}`;
-
-  // Se a página atual tem player do YouTube, tocar automaticamente
-  const sec = sections[currentIndex];
-  const playerDiv = sec.querySelector('.yt-player');
-  if (playerDiv) {
-    // tenta autoplay (muted para maior compatibilidade)
-    const player = ytPlayers.get(playerDiv.id);
-    if (player && typeof player.playVideo === 'function') {
-      try {
-        player.mute();
-        player.playVideo();
-      } catch (_) {}
-    }
-  }
+  
+  // Não iniciamos o vídeo automaticamente - o usuário deve clicar para reproduzir
 }
 
 function nextPage() { showPage(Math.min(currentIndex + 1, sections.length - 1)); }
@@ -52,7 +53,7 @@ window.onYouTubeIframeAPIReady = function () {
       height: '100%',
       videoId,
       playerVars: {
-        autoplay: 0,          // ligamos via JS ao mostrar a página
+        autoplay: 0,          // Sem autoplay - usuário deve clicar para iniciar
         controls: 1,
         rel: 0,
         modestbranding: 1,
@@ -62,11 +63,9 @@ window.onYouTubeIframeAPIReady = function () {
       },
       events: {
         onReady: (ev) => {
-          // Autoplay quando a página do player estiver ativa
-          const isActive = div.closest('.section').classList.contains('active');
-          if (isActive) {
-            try { ev.target.mute(); ev.target.playVideo(); } catch (_) {}
-          }
+          // Não iniciamos automaticamente - usuário deve clicar para reproduzir
+          // Garantimos que o áudio esteja habilitado quando o usuário iniciar o vídeo
+          ev.target.unMute();
         },
         onStateChange: (ev) => {
           // Avança automaticamente ao terminar (somente páginas 2 a 6)
