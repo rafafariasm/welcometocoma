@@ -125,7 +125,28 @@ body.page8 {
 }
 
 /* ACESSIBILIDADE PEQUENA TELA */
+@media (max-width: 768px) {
+  .video-wrap {
+    width: 95vw;
+    max-height: 60vh;
+  }
+  .bottom-nav {
+    gap: 0.75rem;
+  }
+  .btn {
+    min-width: 100px;
+    padding: 0.85rem 1rem;
+  }
+}
+
 @media (max-width: 420px) {
-  .btn { padding: 0.75rem 1rem; font-size: .95rem; }
+  .btn { 
+    padding: 0.75rem 1rem; 
+    font-size: .95rem;
+    min-width: 90px;
+  }
   .section { padding-bottom: 8.5rem; }
+  .bottom-nav {
+    bottom: 1.25rem;
+  }
 }
