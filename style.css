@@ -30,18 +30,18 @@ body.page8 {
 /* BACKGROUNDS — MOBILE */
 @media (max-width: 768px) {
   body {
-    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
+    background-image: url("CELULAR/BACKGROUND CELULAR - SEÇÃO1.jpg");
   }
   body.page1 {
-    background-image: url("CELULAR/BACKGROUND CELULAR - SEÇÃO01.jpg");
+    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
   }
   /* Página 7 no celular */
   body.page7 {
-    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
+    background-image: url("CELULAR/6-release celular.png");
   }
   /* Página 8 no celular */
   body.page8 {
-    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
+    background-image: url("CELULAR/9NOVOFUNDOCELULAR9.png");
   }
 }
 
