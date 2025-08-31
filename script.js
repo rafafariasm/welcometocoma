@@ -1,93 +1,107 @@
-/* ---------- SPA / NAVEGAÇÃO ---------- */
-const sections = Array.from(document.querySelectorAll('.section'));
-let currentIndex = 0;
+// Variáveis globais
+let currentPage = 1;
+const totalPages = 9;
+let players = [];
+const videoIds = [
+    'VIDEO_ID_1', // Substitua pelos IDs reais dos vídeos do YouTube
+    'VIDEO_ID_2',
+    'VIDEO_ID_3',
+    'VIDEO_ID_4',
+    'VIDEO_ID_5',
+    'VIDEO_ID_6'
+];
 
-function showPage(idx) {
-  if (idx < 0 || idx >= sections.length) return;
-  sections.forEach((s, i) => s.classList.toggle('active', i === idx));
-  currentIndex = idx;
+// Inicialização quando o documento estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar botão Enter
+    document.getElementById('enterBtn').addEventListener('click', function() {
+        navigateTo(2);
+    });
 
-  // Atualiza classe no body para aplicar fundos por página
-  const body = document.body;
-  body.className = `page${idx + 1}`;
+    // Configurar botões de navegação
+    setupNavigationButtons();
+});
 
-  // Se a página atual tem player do YouTube, tocar automaticamente
-  const sec = sections[currentIndex];
-  const playerDiv = sec.querySelector('.yt-player');
-  if (playerDiv) {
-    // tenta autoplay (muted para maior compatibilidade)
-    const player = ytPlayers.get(playerDiv.id);
-    if (player && typeof player.playVideo === 'function') {
-      try {
-        player.mute();
-        player.playVideo();
-      } catch (_) {}
+// Função para configurar a API do YouTube
+function onYouTubeIframeAPIReady() {
+    // Criar players do YouTube
+    for (let i = 1; i <= 6; i++) {
+        players[i-1] = new YT.Player('player' + i, {
+            videoId: videoIds[i-1],
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+                'rel': 0,
+                'showinfo': 0,
+                'mute': 0 // Áudio normal (não mutado)
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
     }
-  }
 }
 
-function nextPage() { showPage(Math.min(currentIndex + 1, sections.length - 1)); }
-function prevPage() { showPage(Math.max(currentIndex - 1, 0)); }
-function goHome()   { showPage(0); }
+// Função para lidar com mudanças de estado do player
+function onPlayerStateChange(event) {
+    // Removida a navegação automática após o término dos vídeos
+    // O usuário só muda de página se escolher entre "back" ou "next"
+}
 
-document.getElementById('enterBtn')?.addEventListener('click', () => showPage(1));
-
-document.querySelectorAll('[data-nav="next"]').forEach(btn => btn.addEventListener('click', nextPage));
-document.querySelectorAll('[data-nav="back"]').forEach(btn => btn.addEventListener('click', prevPage));
-document.querySelectorAll('[data-nav="home"]').forEach(btn => btn.addEventListener('click', goHome));
-
-/* Inicia na página 1 */
-showPage(0);
-
-/* ---------- YOUTUBE IFRAME API ---------- */
-const ytPlayers = new Map();
-
-// A API chamará esta função global quando carregar
-window.onYouTubeIframeAPIReady = function () {
-  // Cria players para TODAS as divs .yt-player
-  document.querySelectorAll('.yt-player').forEach((div) => {
-    const videoId = div.getAttribute('data-video-id') || 'dQw4w9WgXcQ'; // placeholder
-    const player = new YT.Player(div.id, {
-      width: '100%',
-      height: '100%',
-      videoId,
-      playerVars: {
-        autoplay: 0,          // ligamos via JS ao mostrar a página
-        controls: 1,
-        rel: 0,
-        modestbranding: 1,
-        playsinline: 1,
-        enablejsapi: 1,
-        origin: window.location.origin
-      },
-      events: {
-        onReady: (ev) => {
-          // Autoplay quando a página do player estiver ativa
-          const isActive = div.closest('.section').classList.contains('active');
-          if (isActive) {
-            try { ev.target.mute(); ev.target.playVideo(); } catch (_) {}
-          }
-        },
-        onStateChange: (ev) => {
-          // Avança automaticamente ao terminar (somente páginas 2 a 6)
-          if (ev.data === YT.PlayerState.ENDED) {
-            const sec = div.closest('.section');
-            const id = sec?.id || '';
-            const pageNum = Number(id.replace('page', '')); // 1..9
-            if (pageNum >= 2 && pageNum <= 6) {
-              nextPage();
-            }
-          }
-        }
-      }
+// Configurar botões de navegação
+function setupNavigationButtons() {
+    // Botões Back
+    const backButtons = document.querySelectorAll('.back-btn');
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const pageSection = this.closest('.page');
+            const pageId = pageSection.id;
+            const pageNumber = parseInt(pageId.replace('page', ''));
+            navigateTo(pageNumber - 1);
+        });
     });
-    ytPlayers.set(div.id, player);
-  });
-};
 
-/* ---------- TECLADO (opcional) ---------- */
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') nextPage();
-  if (e.key === 'ArrowLeft') prevPage();
-  if (e.key.toLowerCase() === 'h') goHome();
-});
+    // Botões Next
+    const nextButtons = document.querySelectorAll('.next-btn');
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const pageSection = this.closest('.page');
+            const pageId = pageSection.id;
+            const pageNumber = parseInt(pageId.replace('page', ''));
+            navigateTo(pageNumber + 1);
+        });
+    });
+
+    // Botão Home
+    const homeButton = document.querySelector('.home-btn');
+    if (homeButton) {
+        homeButton.addEventListener('click', function() {
+            navigateTo(1);
+        });
+    }
+}
+
+// Função para navegar entre páginas
+function navigateTo(pageNumber) {
+    if (pageNumber < 1 || pageNumber > totalPages) return;
+
+    // Pausar todos os vídeos ao mudar de página
+    players.forEach(player => {
+        if (player && typeof player.pauseVideo === 'function') {
+            player.pauseVideo();
+        }
+    });
+
+    // Esconder página atual
+    document.querySelector('.page.active').classList.remove('active');
+    
+    // Mostrar nova página
+    const newPage = document.getElementById('page' + pageNumber);
+    newPage.classList.add('active');
+    
+    // Atualizar página atual
+    currentPage = pageNumber;
+    
+    // Removido o play automático dos vídeos
+    // O usuário precisa dar play manualmente nos vídeos
+}
