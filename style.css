@@ -1,75 +1,65 @@
-/* Estilos Responsivos */
-
-/* Tablets e dispositivos médios */
-@media screen and (max-width: 992px) {
-    .video-container {
-        width: 80%;
-    }
-    
-    .matrix-btn {
-        padding: 8px 25px;
-        font-size: 16px;
-    }
-    
-    .release-image, .gallery-image {
-        height: 60vh;
-    }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #e5efe5;
 }
 
-/* Dispositivos móveis */
-@media screen and (max-width: 768px) {
-    body {
-        background-image: url('../img/BACKGROUND-GERAL-CELULAR.png');
-    }
-    
-    .video-container {
-        width: 90%;
-    }
-    
-    .matrix-btn {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-    
-    /* Ajuste para página 1 em celular */
-    #page1 {
-        background-image: url('../img/BACKGROUND CELULAR - SEÇÃO1.jpg');
-    }
-    
-    /* Ajuste para página 7 em celular */
-    .release-image {
-        background-image: url('../img/6-release celular.png');
-        height: 50vh;
-    }
-    
-    /* Ajuste para página 8 em celular */
-    .page {
-        background-image: url('../img/BACKGROUND-GERAL-CELULAR.png');
-    }
-    
-    .gallery-image {
-        background-image: url('../img/8-GALERIA FOTO CELULAR.png');
-        height: 50vh;
-    }
+/* BACKGROUNDS DESKTOP */
+body { background-image: url("imgdesktop/BACKGROUND DO SITE GERAL DESKTOP.png"); }
+body.page1 { background-image: url("imgdesktop/BACKGROUND DESKTOP - SEÇÃO 1.jpg"); }
+body.page7 { background-image: url("imgdesktop/7-release DESKTOP.jpg"); }
+body.page8 { background-image: url("imgdesktop/8-Galeria-de-fotos-seção-8 - desktop.png"); }
+
+/* BACKGROUNDS MOBILE */
+@media (max-width: 768px) {
+  body { background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png"); }
+  body.page1 { background-image: url("CELULAR/BACKGROUND CELULAR - SEÇÃO1.jpg"); }
+  body.page7 { background-image: url("CELULAR/6-release celular.png"); }
+  body.page8 { background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png"); }
 }
 
-/* Dispositivos muito pequenos */
-@media screen and (max-width: 480px) {
-    .video-container {
-        width: 95%;
-    }
-    
-    .matrix-btn {
-        padding: 6px 15px;
-        font-size: 12px;
-        margin: 5px;
-    }
-    
-    .navigation {
-        margin-top: 15px;
-    }
-    
-    .release-image, .gallery-image {
-        height: 40vh;
-    }
+/* SECTIONS */
+.section { display: none; min-height: 100dvh; padding: 4rem 1rem 8rem; }
+.section.active { display: flex; align-items: center; justify-content: center; flex-direction: column; }
+.section-content { width: min(1100px, 92vw); }
+
+/* GALLERY IMG */
+.gallery-img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+/* BUTTONS */
+.btn {
+  border: 2px solid #00ff7f;
+  background: transparent;
+  color: #00ff7f;
+  padding: 0.85rem 1.25rem;
+  text-transform: uppercase;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,255,127,0.5), inset 0 0 6px rgba(0,255,127,0.25);
 }
+.btn:hover { background-color: rgba(0,255,127,0.08); }
+
+/* NAVIGATION */
+.bottom-cta, .bottom-nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.video-wrap { 
+  width: min(900px, 92vw);
+  aspect-ratio: 16/9;
+  margin-bottom: 5rem; /* espaço para não sobrepor botões */
+  border: 2px solid #00ff7f;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 18px rgba(0,255,127,0.45);
+}
+.yt-player, .video-wrap iframe { width: 100%; height: 100%; }
