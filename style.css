@@ -124,6 +124,7 @@ body.page8 {
 
 /* RELEASE (PÁGINA 7) */
 .release-container {
+  margin: auto;            /* <-- ADICIONA AQUI (linha 2) */
   max-width: 800px;
   max-height: 70vh;       /* altura fixa com rolagem */
   padding: 20px;
