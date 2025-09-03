@@ -93,8 +93,11 @@ body.page8 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 10px 1rem; /* espaçamento ajustado */
   pointer-events: none;  /* evita clique fora do botão */
+  z-index: 1000; /* garante que os botões fiquem acima de outros elementos */
+  background-color: rgba(0, 0, 0, 0.2); /* fundo sutil para melhorar visibilidade */
+  width: 100%; /* garante largura total */
 }
 .bottom-cta .btn,
 .bottom-nav .btn {
