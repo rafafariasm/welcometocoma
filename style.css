@@ -21,7 +21,7 @@ body.page1 {
   background-image: url("imgdesktop/BACKGROUND DESKTOP - SEÇÃO 1.jpg");
 }
 body.page7 {
-  background-image: url("imgdesktop/7-release DESKTOP.jpg");
+  background-image: url("imgdesktop/BACKGROUND DESKTOP - SEÇÃO 1.jpg");
 }
 body.page8 {
   background-image: url("imgdesktop/8-Galeria-de-fotos-seção-8 - desktop.png");
@@ -33,11 +33,11 @@ body.page8 {
     background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
   }
   body.page1 {
-    background-image: url("CELULAR/BACKGROUND CELULAR - SEÇÃO01.jpg");
+    background-image: url("CELULAR/BACKGROUND CELULAR - SEÇÃO1.jpg");
   }
   /* Página 7 no celular */
   body.page7 {
-    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
+    background-image: url("CELULAR/BACKGROUND CELULAR - SEÇÃO1.jpg");
   }
   /* Página 8 no celular */
   body.page8 {
@@ -125,6 +125,69 @@ body.page8 {
   display: block;
 }
 
+/* RELEASE TEXT STYLES */
+.release-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 127, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 127, 0.2);
+}
+
+.release-title {
+  font-size: 1.8rem;
+  color: #00ff7f;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.release-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.language-btn {
+  background-color: transparent;
+  color: #00ff7f;
+  border: 1px solid #00ff7f;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-btn.active {
+  background-color: rgba(0, 255, 127, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 127, 0.5);
+}
+
+.language-content {
+  display: none;
+}
+
+.language-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ACESSIBILIDADE PEQUENA TELA */
 @media (max-width: 768px) {
   .video-wrap {
@@ -137,6 +200,20 @@ body.page8 {
   .btn {
     min-width: 100px;
     padding: 0.85rem 1rem;
+  }
+  
+  .release-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+  
+  .release-title {
+    font-size: 1.5rem;
+  }
+  
+  .release-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
 
