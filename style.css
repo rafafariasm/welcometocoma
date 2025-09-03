@@ -21,7 +21,7 @@ body.page1 {
   background-image: url("imgdesktop/BACKGROUND DESKTOP - SEÇÃO 1.jpg");
 }
 body.page7 {
-  background-image: url("imgdesktop/FUNDO-VIDEO");
+  background-image: url("imgdesktop/FUNDO-VIDEO.png");
 }
 body.page8 {
   background-image: url("imgdesktop/8fundo.png");
@@ -37,7 +37,7 @@ body.page8 {
   }
   /* Página 7 no celular */
   body.page7 {
-    background-image: url("CELULAR/BACKGROUND-GERAL-CELULAR.png");
+    background-image: url("imgdesktop/FUNDO-VIDEO.png");
   }
   /* Página 8 no celular */
   body.page8 {
