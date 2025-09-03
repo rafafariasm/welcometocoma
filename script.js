@@ -90,3 +90,29 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') prevPage();
   if (e.key.toLowerCase() === 'h') goHome();
 });
+
+/* ---------- SELETOR DE IDIOMA ---------- */
+document.addEventListener('DOMContentLoaded', function() {
+  const languageBtns = document.querySelectorAll('.language-btn');
+  
+  languageBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Remove a classe active de todos os botões
+      languageBtns.forEach(b => b.classList.remove('active'));
+      
+      // Adiciona a classe active ao botão clicado
+      this.classList.add('active');
+      
+      // Obtém o idioma selecionado
+      const lang = this.getAttribute('data-lang');
+      
+      // Esconde todos os conteúdos
+      document.querySelectorAll('.language-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Mostra o conteúdo do idioma selecionado
+      document.getElementById(`${lang}-content`).classList.add('active');
+    });
+  });
+});
