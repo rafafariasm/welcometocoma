@@ -21,10 +21,7 @@ function showPage(idx) {
   currentIndex = idx;
 
   // Atualiza classe no body para aplicar fundos por página
-  const body = document.body;
-  body.className = `page${idx + 1}`;
-  
-  // Não iniciamos o vídeo automaticamente - o usuário deve clicar para reproduzir
+  document.body.className = `page${idx + 1}`;
 }
 
 function nextPage() { showPage(Math.min(currentIndex + 1, sections.length - 1)); }
@@ -53,7 +50,7 @@ window.onYouTubeIframeAPIReady = function () {
       height: '100%',
       videoId,
       playerVars: {
-        autoplay: 0,          // Sem autoplay - usuário deve clicar para iniciar
+        autoplay: 0,
         controls: 1,
         rel: 0,
         modestbranding: 1,
@@ -63,16 +60,14 @@ window.onYouTubeIframeAPIReady = function () {
       },
       events: {
         onReady: (ev) => {
-          // Não iniciamos automaticamente - usuário deve clicar para reproduzir
-          // Garantimos que o áudio esteja habilitado quando o usuário iniciar o vídeo
-          ev.target.unMute();
+          ev.target.unMute(); // garante que o áudio estará habilitado
         },
         onStateChange: (ev) => {
           // Avança automaticamente ao terminar (somente páginas 2 a 6)
           if (ev.data === YT.PlayerState.ENDED) {
             const sec = div.closest('.section');
             const id = sec?.id || '';
-            const pageNum = Number(id.replace('page', '')); // 1..9
+            const pageNum = Number(id.replace('page', '')); // 1..n
             if (pageNum >= 2 && pageNum <= 6) {
               nextPage();
             }
