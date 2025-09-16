@@ -63,17 +63,16 @@ window.onYouTubeIframeAPIReady = function () {
       },
       events: {
         onReady: (ev) => {
-          // Não iniciamos automaticamente - usuário deve clicar para reproduzir
-          // Garantimos que o áudio esteja habilitado quando o usuário iniciar o vídeo
-          ev.target.unMute();
+          ev.target.unMute(); // garante áudio habilitado
         },
         onStateChange: (ev) => {
-          // Avança automaticamente ao terminar (somente páginas 2 a 6)
           if (ev.data === YT.PlayerState.ENDED) {
             const sec = div.closest('.section');
             const id = sec?.id || '';
-            const pageNum = Number(id.replace('page', '')); // 1..9
-            if (pageNum >= 2 && pageNum <= 6) {
+            const pageNum = Number(id.replace('page', '')); // extrai número da página
+
+            // Avança apenas se estiver na página 2, 3, 4, 5 ou 6
+            if ([2, 3, 4, 5, 6].includes(pageNum)) {
               nextPage();
             }
           }
